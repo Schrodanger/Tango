@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 280px;
+      padding: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 18px;
+      color: #333;
+      margin: 0 0 15px 0;
+    }
+    
+    .icons {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 10px;
+    }
+    
+    .solve-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .solve-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .read-btn {
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+    }
+    
+    .read-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+    }
+    
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      display: none;
+    }
+    
+    .status.success {
+      display: block;
+      background: #d4edda;
+      color: #155724;
+    }
+    
+    .status.error {
+      display: block;
+      background: #f8d7da;
+      color: #721c24;
+    }
+    
+    .status.info {
+      display: block;
+      background: #e7f3ff;
+      color: #0056b3;
+    }
+    
+    .instructions {
+      margin-top: 15px;
+      padding: 10px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      font-size: 11px;
+      color: #666;
+      text-align: left;
+    }
+    
+    .instructions ol {
+      margin: 5px 0;
+      padding-left: 20px;
+    }
+    
+    .instructions li {
+      margin: 3px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icons">☀️ 🌙</div>
+    <h1>Tango Puzzle Solver</h1>
+    
+    <button class="read-btn" id="readBtn">📖 Read Puzzle</button>
+    <button class="solve-btn" id="solveBtn">🧩 Solve & Fill</button>
+    
+    <div class="status" id="status"></div>
+    
+    <div class="instructions">
+      <strong>How to use:</strong>
+      <ol>
+        <li>Open LinkedIn Tango puzzle</li>
+        <li>Click "Read Puzzle" to scan</li>
+        <li>Click "Solve & Fill" to auto-solve</li>
+      </ol>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

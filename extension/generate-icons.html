@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Icons</title>
+</head>
+<body>
+  <h2>Right-click each icon and "Save image as" with the corresponding filename</h2>
+  
+  <h3>icon16.png</h3>
+  <canvas id="icon16" width="16" height="16"></canvas>
+  
+  <h3>icon48.png</h3>
+  <canvas id="icon48" width="48" height="48"></canvas>
+  
+  <h3>icon128.png</h3>
+  <canvas id="icon128" width="128" height="128"></canvas>
+  
+  <script>
+    function drawIcon(canvas) {
+      const ctx = canvas.getContext('2d');
+      const size = canvas.width;
+      const scale = size / 16;
+      
+      // Background
+      ctx.fillStyle = '#667eea';
+      ctx.beginPath();
+      ctx.roundRect(0, 0, size, size, 3 * scale);
+      ctx.fill();
+      
+      // Sun
+      ctx.fillStyle = '#F5A623';
+      ctx.beginPath();
+      ctx.arc(5 * scale, 8 * scale, 3 * scale, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Moon (crescent)
+      ctx.fillStyle = '#4A90D9';
+      ctx.beginPath();
+      ctx.arc(11 * scale, 8 * scale, 3 * scale, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Cut out for crescent
+      ctx.fillStyle = '#667eea';
+      ctx.beginPath();
+      ctx.arc(12.5 * scale, 7 * scale, 2.2 * scale, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    drawIcon(document.getElementById('icon16'));
+    drawIcon(document.getElementById('icon48'));
+    drawIcon(document.getElementById('icon128'));
+    
+    // Convert to downloadable images
+    ['icon16', 'icon48', 'icon128'].forEach(id => {
+      const canvas = document.getElementById(id);
+      const img = document.createElement('img');
+      img.src = canvas.toDataURL('image/png');
+      img.style.border = '1px solid #ccc';
+      img.style.margin = '10px';
+      canvas.parentNode.insertBefore(img, canvas.nextSibling);
+    });
+  </script>
+</body>
+</html>
